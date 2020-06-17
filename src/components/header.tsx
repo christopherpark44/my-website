@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
 
@@ -13,36 +11,31 @@ const HomeHead = styled(Card)`
 
 const NameHead = styled.h1`
     font-family: 'Comfortaa';
-    font-size: 50px;
+    font-size: 60px;
 `
 
 const RoleHead = styled.h3`
     font-family: 'Alata';
-    font-size: 22px;
+    font-size: 18px;
 `
-
-
 
 export default function HomeHeader() {
     return (
         <HomeHead>
-            <Grid container spacing={0}>
-                <Grid xs={12}>
-                    <NameHead>
-                        Christopher Park
-                    </NameHead>
+            <NameHead>
+                Christopher Park
+            <Grid container direction="row" justify="center" alignItems="flex-start">
+                <Grid xs={4}>
+                    <RoleHead>University of Waterloo Math 2nd Year Student</RoleHead>
                 </Grid>
-                <Grid item xs={6}>
-                    <RoleHead>
-                        Full Stack Software Engineer
-                    </RoleHead>
+                <Grid xs={4}>
+                    <RoleHead>Full Stack Software Developer</RoleHead>
                 </Grid>
-                <Grid item xs={6}>
-                    <RoleHead>
-                        QA Engineer
-                    </RoleHead>
+                <Grid xs={4}>
+                    <RoleHead>Software QA Engineer</RoleHead>
                 </Grid>
             </Grid>
+            </NameHead>
         </HomeHead>
     )
 
