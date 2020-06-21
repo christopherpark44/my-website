@@ -14,10 +14,10 @@ function App() {
       <Router>
         <Switch>        
           <Route path="/projects" component={ProjectsPage}></Route>
-          <Route path="/resume"></Route>
-          <Route path="/contact"></Route>
-          <Route path="/about"></Route>
-          <Route path="/other"></Route>
+          <Route path="/resume" component={ResumePage}></Route>
+          <Route path="/contact" component={ContactPage}></Route>
+          <Route path="/about" component={AboutPage}></Route>
+          <Route path="/other" component={OtherPage}></Route>
           <Route path="/" component={HomePage}></Route>  
         </Switch>
       </Router>

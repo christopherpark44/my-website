@@ -5,20 +5,59 @@ import { BrowserRouter as Router,
          Link } from "react-router-dom";
 import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
-import ProjectsPage from '../pages/projectspage';
+import Box from '@material-ui/core/Box';
+import Card from '@material-ui/core/Card';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+
+export interface Props {
+    PageName: string;
+}
+
+const HomeHead = styled(Card)`
+    && {
+        color: white;
+        background-color: #ff4040;
+        padding: 50px
+    }
+` 
+
+const NameHead = styled.h1`
+    font-family: 'Comfortaa';
+    font-size: 60px;
+`
 
 const PagesLink = styled(Link)`
     text-decoration: none;
     color: black;
-`
-const PagesButton = styled(Button)`
-
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    &:hover {
+        background-color: #ff4040;
+        color: white;
+    }
+    &:focus {
+        background-color: #ff4040;
+        color: white;
+    }
 `
 
 const TabsBar = styled(AppBar)`
-    background-color: white;
+    && {
+        background-color: white;
+    }
+`
+
+const SocialMediaLink = styled.a`
+    text-decoration: none;
+    padding: 1rem;
+    margin: 2rem;
+    color: white;
+    background-color: #4287f5;
+    border: 2px solid #4287f5;
+    border-radius: 25px;
 `
 
 
@@ -26,31 +65,40 @@ export function GlobalTabs() {
     return (
         <TabsBar position = "static">
             <nav>
-                <Grid container
-                    direction="row"
-                    justify="center"
-                    alignItems="center"> 
-                    <Grid xs = {2}>
-                        <PagesLink to = "/"> Home </PagesLink>
-                    </Grid>
-                    <Grid xs = {2}>
-                        <PagesLink to = "/projects"> Projects </PagesLink>
-                    </Grid>
-                    <Grid xs = {2}>
-                        <PagesLink to = "/resume"> Resume </PagesLink>
-                    </Grid>
-                    <Grid xs = {2}>
-                        <PagesLink to = "/contact"> Contact </PagesLink>
-                    </Grid>
-                    <Grid xs = {2}>
-                        <PagesLink to = "/about"> About </PagesLink>
-                    </Grid>
-                    <Grid xs = {2}>
-                        <PagesLink to = "/other"> Other </PagesLink>
-                    </Grid>
-                </Grid>        
+                <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center">
+                    <PagesLink to = "/"> Home </PagesLink>
+                    <PagesLink to = "/projects"> Projects </PagesLink>
+                    <PagesLink to = "/resume"> Resume </PagesLink>
+                    <PagesLink to = "/contact"> Contact </PagesLink>
+                    <PagesLink to = "/about"> About </PagesLink>
+                    <PagesLink to = "/other"> Other </PagesLink>  
+                </Box> 
             </nav>
         </TabsBar>
     )
 }
 
+export function Footer() {
+    return (
+        <Box display="inline-block">
+            <span>
+                <SocialMediaLink href="https://github.com/christopherpark44">
+                <GitHubIcon/>GitHub</SocialMediaLink>
+            </span>
+            <span>
+                <SocialMediaLink href="https://www.linkedin.com/in/christopher-park-1160b0164/">
+                <LinkedInIcon/>LinkedIn</SocialMediaLink>
+            </span>
+        </Box>
+    )
+}
+
+export function PageHeader ({ PageName } : Props) {
+    return (
+        <HomeHead>
+            <NameHead>
+               {PageName}
+            </NameHead>
+         </HomeHead>
+    )
+}

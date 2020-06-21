@@ -1,28 +1,35 @@
 import React from 'react';
-import logo from '../logo.svg';
-import HomeHeader from '../components/header'
-import { GlobalTabs } from '../components/common'
+import styled from 'styled-components';
+import HomeHeader from '../components/header';
+import { GlobalTabs , Footer} from '../components/common';
+import Card from '@material-ui/core/Card';
 import Container from '@material-ui/core/Container';
+
+const IntroText = styled.h2`
+    font-family: 'Oswald';
+    font-size: '30px;
+`
+
+const DescriptionText = styled.p`
+    font-family: 'Oswald';
+`
+
 
 export default function HomePage() {
     return (
         <Container disableGutters>
             <HomeHeader/>
             <GlobalTabs/>
-            <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-                Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Learn React
-            </a>
-            </header>
+                <Card>
+                <IntroText>
+                    Hi, my name is Christopher. 
+                </IntroText>
+                <DescriptionText>
+                    I'm a 2nd year University of Waterloo Mathematics Program Student 
+                </DescriptionText>
+                <DescriptionText>and Software Developer</DescriptionText>
+                </Card>
+            <Footer/>
         </Container>
     )
 }

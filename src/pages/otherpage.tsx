@@ -1,5 +1,11 @@
 import React from 'react';
+import { GlobalTabs , PageHeader } from '../components/common';
 
 export default function OtherPage () {
-    return
+    return (
+        <div>
+            <PageHeader PageName = "Other"/>
+            <GlobalTabs/>
+        </div>
+    )
 }
