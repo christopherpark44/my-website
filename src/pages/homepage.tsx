@@ -20,7 +20,8 @@ export default function HomePage() {
         <Container disableGutters>
             <HomeHeader/>
             <GlobalTabs/>
-                <Card>
+            <br/>
+            <Card>
                 <IntroText>
                     Hi, my name is Christopher. 
                 </IntroText>
@@ -28,7 +29,8 @@ export default function HomePage() {
                     I'm a 2nd year University of Waterloo Mathematics Program Student 
                 </DescriptionText>
                 <DescriptionText>and Software Developer</DescriptionText>
-                </Card>
+            </Card>
+            <br/>
             <Footer/>
         </Container>
     )

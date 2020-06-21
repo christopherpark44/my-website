@@ -2,8 +2,9 @@ import React from 'react';
 import { GlobalTabs , PageHeader } from '../components/common';
 import styled from 'styled-components';
 
-const ResumeImage = styled.img`
-    margin: 10px;
+const ResumeImageContainer = styled.div`
+    && {
+        margin: 20px;
 `
 
 export default function ResumePage () {
@@ -11,7 +12,10 @@ export default function ResumePage () {
         <div>
             <PageHeader PageName = "My Resume"/>
             <GlobalTabs/>
-            <ResumeImage src={require('../resources/resume.png')} alt="Cannot Load" width="800" height="1100"/>
+            <br/>
+            <ResumeImageContainer>
+                <img src={require('../resources/resume.png')} alt="Cannot Load" width="800" height="1100"/>
+            </ResumeImageContainer>
         </div>
     )
 }
