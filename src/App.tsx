@@ -1,31 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css'; 
-import HomeHeader from './components/header'
-import { GlobalTabs } from './components/common'
-import Container from '@material-ui/core/Container';
+import HomePage from './pages/homepage'
+import ProjectsPage from './pages/projectspage';
+import ResumePage from './pages/resumepage';
+import ContactPage from './pages/contactpage';
+import AboutPage from './pages/aboutpage';
+import OtherPage from './pages/otherpage';
 
 function App() {
   return (
     <div className="App">
-      <Container>
-        <HomeHeader/>
-        <GlobalTabs/>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </Container>
+      <Router>
+        <Switch>        
+          <Route path="/projects" component={ProjectsPage}></Route>
+          <Route path="/resume" component={ResumePage}></Route>
+          <Route path="/contact" component={ContactPage}></Route>
+          <Route path="/about" component={AboutPage}></Route>
+          <Route path="/other" component={OtherPage}></Route>
+          <Route path="/" component={HomePage}></Route>  
+        </Switch>
+      </Router>
     </div>
   );
 }

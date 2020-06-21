@@ -1,28 +1,104 @@
 import React from 'react';
+import { BrowserRouter as Router,
+         Switch,
+         Route,
+         Link } from "react-router-dom";
 import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import Box from '@material-ui/core/Box';
+import Card from '@material-ui/core/Card';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
-export function GlobalTabs() {
-    const [value, setValue] = React.useState(0);
+export interface Props {
+    PageName: string;
+}
 
-    const handleChange = (event: any, newValue: number) => {
-        setValue(newValue);
-    };
+const HomeHead = styled(Card)`
+    && {
+        color: white;
+        background-color: #ff4040;
+        padding: 50px
+    }
+` 
 
+const NameHead = styled.h1`
+    font-family: 'Comfortaa';
+    font-size: 60px;
+`
+
+const PagesLink = styled(Link)`
+    text-decoration: none;
+    color: black;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    &:hover {
+        background-color: #ff4040;
+        color: white;
+    }
+    &:focus {
+        background-color: #ff4040;
+        color: white;
+    }
+`
+
+const TabsBar = styled(AppBar)`
+    && {
+        background-color: white;
+    }
+`
+
+const SocialMediaLink = styled.a`
+    text-decoration: none;
+    padding: 1rem;
+    margin: 2rem;
+    color: white;
+    background-color: #4287f5;
+    border: 2px solid #4287f5;
+    border-radius: 25px;
+`
+
+
+export function GlobalTabs() {   
     return (
-        <AppBar position = "static">
-            <Tabs 
-            value={value}
-            onChange={handleChange}
-            centered>
-                <Tab label = "Home"/>
-                <Tab label = "Projects"/>
-                <Tab label = "Contact"/>
-                <Tab label = "Other"/>
-            </Tabs>
-        </AppBar>
+        <TabsBar position = "static">
+            <nav>
+                <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center">
+                    <PagesLink to = "/"> Home </PagesLink>
+                    <PagesLink to = "/projects"> Projects </PagesLink>
+                    <PagesLink to = "/resume"> Resume </PagesLink>
+                    <PagesLink to = "/contact"> Contact </PagesLink>
+                    <PagesLink to = "/about"> About </PagesLink>
+                    <PagesLink to = "/other"> Other </PagesLink>  
+                </Box> 
+            </nav>
+        </TabsBar>
     )
 }
 
+export function Footer() {
+    return (
+        <Box display="inline-block">
+            <span>
+                <SocialMediaLink href="https://github.com/christopherpark44">
+                <GitHubIcon/>GitHub</SocialMediaLink>
+            </span>
+            <span>
+                <SocialMediaLink href="https://www.linkedin.com/in/christopher-park-1160b0164/">
+                <LinkedInIcon/>LinkedIn</SocialMediaLink>
+            </span>
+        </Box>
+    )
+}
+
+export function PageHeader ({ PageName } : Props) {
+    return (
+        <HomeHead>
+            <NameHead>
+               {PageName}
+            </NameHead>
+         </HomeHead>
+    )
+}
