@@ -18,7 +18,7 @@ const HomeHead = styled(Card)`
     && {
         color: white;
         background-color: #ff4040;
-        padding: 50px
+        padding: 3.1rem;
     }
 ` 
 
@@ -30,10 +30,9 @@ const NameHead = styled.h1`
 const PagesLink = styled(Link)`
     text-decoration: none;
     color: black;
-    padding-left: 5rem;
-    padding-right: 5rem;
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
+    width: 15rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     &:hover {
         background-color: #ff4040;
         color: white;
@@ -63,7 +62,7 @@ const SocialMediaLink = styled.a`
 
 export function GlobalTabs() {   
     return (
-        <TabsBar position = "static">
+        <TabsBar position = "sticky">
             <nav>
                 <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center">
                     <PagesLink to = "/"> Home </PagesLink>

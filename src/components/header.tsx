@@ -7,7 +7,7 @@ const HomeHead = styled(Card)`
     && {
         color: white;
         background-color: #ff4040;
-        padding: 50px
+        padding: 1.2rem;
     }
 ` 
 
