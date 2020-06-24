@@ -2,10 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import HomeHeader from '../components/header';
 import { GlobalTabs , Footer} from '../components/common';
-import Box from '@material-ui/core/Box';
 import Card from '@material-ui/core/Card';
-import Divider from '@material-ui/core/Divider';
-import ReactLogo from '../resources/ReactLogo.svg';
 
 
 const IntroText = styled.h2`
