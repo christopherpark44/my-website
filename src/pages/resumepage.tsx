@@ -13,9 +13,9 @@ export default function ResumePage () {
             <PageHeader PageName = "My Resume"/>
             <GlobalTabs/>
             <br/>
-           {/*  <ResumeImageContainer>
+            <ResumeImageContainer>
                 <img src={require('../resources/resume.png')} alt="Cannot Load" width="800" height="1100"/>
-            </ResumeImageContainer> */}
+            </ResumeImageContainer>
         </div>
     )
 }

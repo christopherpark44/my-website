@@ -2,16 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import HomeHeader from '../components/header';
 import { GlobalTabs , Footer} from '../components/common';
+import Box from '@material-ui/core/Box';
 import Card from '@material-ui/core/Card';
-import Container from '@material-ui/core/Container';
+import Divider from '@material-ui/core/Divider';
+import ReactLogo from '../resources/ReactLogo.svg';
+
 
 const IntroText = styled.h2`
     font-family: 'Oswald';
-    font-size: '30px;
+    font-size: 50px;
 `
 
-const DescriptionText = styled.p`
+const DescriptionText = styled.h1`
     font-family: 'Oswald';
+    font-size: 30px;
 `
 
 export default function HomePage() {
@@ -25,9 +29,23 @@ export default function HomePage() {
                         Hi, my name is Christopher. 
                     </IntroText>
                     <DescriptionText>
-                        I'm a 2nd year University of Waterloo Mathematics Program Student 
+                        I'm a 2nd year University of Waterloo Mathematics Program Student and Software Developer
                     </DescriptionText>
-                    <DescriptionText>and Software Developer</DescriptionText>
+                    <br/>
+                    <IntroText>
+                        Programming Languages
+                    </IntroText>
+                    <img src={require('../resources/ReactLogo.svg')} alt="Cannot Load" width="50" height="50"/>
+                    <img src={require('../resources/TypeScriptLogo.svg')} alt="Cannot Load" width="50" height="50"/>
+                    <img src={require('../resources/NodeLogo.png')} alt="Cannot Load" width="50" height="50"/>
+                    <img src={require('../resources/PythonLogo.png')} alt="Cannot Load" width="50" height="50"/>
+                    <img src={require('../resources/JavaLogo.png')} alt="Cannot Load" width="50" height="50"/>
+
+                    <IntroText>
+                        Work Experiences
+                    </IntroText>
+                    <img src={require('../resources/SetterLogo.png')} alt="Cannot Load" width="50" height="50"/>
+                    <img src={require('../resources/CIBCLogo.svg')} alt="Cannot Load" width="50" height="50"/>
                 </Card>
                 <br/>
                 <Footer/>

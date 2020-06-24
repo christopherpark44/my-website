@@ -37,10 +37,6 @@ const PagesLink = styled(Link)`
         background-color: #ff4040;
         color: white;
     }
-    &:focus {
-        background-color: #ff4040;
-        color: white;
-    }
 `
 
 const TabsBar = styled(AppBar)`
