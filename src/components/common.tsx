@@ -74,7 +74,7 @@ export function Footer() {
     return (
         <Box display="inline-block">
             <span>
-                <SocialMediaLink href="https://github.com/christopherpark44">
+                <SocialMediaLink href="https://github.com/christopherpark88">
                 <GitHubIcon/>GitHub</SocialMediaLink>
             </span>
             <span>
