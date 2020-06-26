@@ -1,30 +1,33 @@
 {
   "files": {
     "main.css": "/my-website/static/css/main.b758cbcf.chunk.css",
-    "main.js": "/my-website/static/js/main.84a690ca.chunk.js",
-    "main.js.map": "/my-website/static/js/main.84a690ca.chunk.js.map",
+    "main.js": "/my-website/static/js/main.707b9f32.chunk.js",
+    "main.js.map": "/my-website/static/js/main.707b9f32.chunk.js.map",
     "runtime-main.js": "/my-website/static/js/runtime-main.dac0fb3d.js",
     "runtime-main.js.map": "/my-website/static/js/runtime-main.dac0fb3d.js.map",
-    "static/js/2.60158c4f.chunk.js": "/my-website/static/js/2.60158c4f.chunk.js",
-    "static/js/2.60158c4f.chunk.js.map": "/my-website/static/js/2.60158c4f.chunk.js.map",
+    "static/js/2.0f76be50.chunk.js": "/my-website/static/js/2.0f76be50.chunk.js",
+    "static/js/2.0f76be50.chunk.js.map": "/my-website/static/js/2.0f76be50.chunk.js.map",
     "index.html": "/my-website/index.html",
-    "precache-manifest.9796afa10eb6857bacc055f5c00a34bc.js": "/my-website/precache-manifest.9796afa10eb6857bacc055f5c00a34bc.js",
+    "precache-manifest.cae858a9f804192b831f9b26d47e991b.js": "/my-website/precache-manifest.cae858a9f804192b831f9b26d47e991b.js",
     "service-worker.js": "/my-website/service-worker.js",
     "static/css/main.b758cbcf.chunk.css.map": "/my-website/static/css/main.b758cbcf.chunk.css.map",
-    "static/js/2.60158c4f.chunk.js.LICENSE.txt": "/my-website/static/js/2.60158c4f.chunk.js.LICENSE.txt",
-    "static/media/CIBCLogo.svg": "/my-website/static/media/CIBCLogo.e0788759.svg",
+    "static/js/2.0f76be50.chunk.js.LICENSE.txt": "/my-website/static/js/2.0f76be50.chunk.js.LICENSE.txt",
+    "static/media/CIBCLogo.png": "/my-website/static/media/CIBCLogo.c4d4aa3e.png",
+    "static/media/ChaiLogo.png": "/my-website/static/media/ChaiLogo.f6108efd.png",
     "static/media/JavaLogo.png": "/my-website/static/media/JavaLogo.3d380d66.png",
-    "static/media/NodeLogo.png": "/my-website/static/media/NodeLogo.97015d8f.png",
+    "static/media/JavaScriptLogo.png": "/my-website/static/media/JavaScriptLogo.0cded3a3.png",
+    "static/media/JestLogo.png": "/my-website/static/media/JestLogo.9edcb510.png",
+    "static/media/NodeJSLogo.png": "/my-website/static/media/NodeJSLogo.97015d8f.png",
     "static/media/PythonLogo.png": "/my-website/static/media/PythonLogo.067050f6.png",
-    "static/media/ReactLogo.svg": "/my-website/static/media/ReactLogo.4009eef3.svg",
+    "static/media/ReactJSLogo.png": "/my-website/static/media/ReactJSLogo.37fe8322.png",
     "static/media/SetterLogo.png": "/my-website/static/media/SetterLogo.d4366b66.png",
-    "static/media/TypeScriptLogo.svg": "/my-website/static/media/TypeScriptLogo.3de182d2.svg",
-    "static/media/resume.png": "/my-website/static/media/resume.5dbea099.png"
+    "static/media/TypeScriptLogo.png": "/my-website/static/media/TypeScriptLogo.4e96f111.png",
+    "static/media/resume.png": "/my-website/static/media/resume.52ac0bec.png"
   },
   "entrypoints": [
     "static/js/runtime-main.dac0fb3d.js",
-    "static/js/2.60158c4f.chunk.js",
+    "static/js/2.0f76be50.chunk.js",
     "static/css/main.b758cbcf.chunk.css",
-    "static/js/main.84a690ca.chunk.js"
+    "static/js/main.707b9f32.chunk.js"
   ]
 }
