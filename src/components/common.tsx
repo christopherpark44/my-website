@@ -7,8 +7,12 @@ import Card from '@material-ui/core/Card';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
-export interface Props {
+interface HeaderProps {
     PageName: string;
+}
+
+interface LoadLogoProps {
+    LogoName: string
 }
 
 const HomeHead = styled(Card)`
@@ -52,6 +56,16 @@ const SocialMediaLink = styled.a`
     border-radius: 25px;
 `
 
+const LogoDesc = styled.div`
+    display: inline-table;
+    margin: 2rem;
+`
+
+const DescriptionText = styled.h1`
+    font-family: 'Oswald';
+    font-size: 30px;
+    margin: 0px;
+`
 
 export function GlobalTabs() {   
     return (
@@ -85,12 +99,22 @@ export function Footer() {
     )
 }
 
-export function PageHeader ({ PageName } : Props) {
+export function PageHeader ({ PageName } : HeaderProps) {
     return (
         <HomeHead>
             <NameHead>
                {PageName}
             </NameHead>
          </HomeHead>
+    )
+}
+
+export function LoadLogo({ LogoName } : LoadLogoProps) {
+    console.log(`../resources/${LogoName}Logo.png`)
+    return (
+        <LogoDesc>
+            <img src={require(`../resources/${LogoName}Logo.png`)} alt="Cannot Load" width="50" height="50"/>
+            <DescriptionText>{LogoName}</DescriptionText>
+        </LogoDesc>
     )
 }
