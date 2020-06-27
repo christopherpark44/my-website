@@ -61,7 +61,7 @@ const LogoDesc = styled.div`
     margin: 2rem;
 `
 
-const DescriptionText = styled.h1`
+const DetailText = styled.h1`
     font-family: 'Oswald';
     font-size: 30px;
     margin: 0px;
@@ -114,7 +114,7 @@ export function LoadLogo({ LogoName } : LoadLogoProps) {
     return (
         <LogoDesc>
             <img src={require(`../resources/${LogoName}Logo.png`)} alt="Cannot Load" width="50" height="50"/>
-            <DescriptionText>{LogoName}</DescriptionText>
+            <DetailText>{LogoName}</DetailText>
         </LogoDesc>
     )
 }
