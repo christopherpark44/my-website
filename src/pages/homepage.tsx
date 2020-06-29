@@ -23,7 +23,6 @@ const DescriptionText = styled.h3`
 `
 
 const WorkBlock = styled.div`
-    display: flex;
     justify-content: center;
     margin: 2rem
 `

@@ -57,7 +57,7 @@ const SocialMediaLink = styled.a`
 `
 
 const LogoDesc = styled.div`
-    display: inline-table;
+    display: inline-flex;
     margin: 2rem;
 `
 
