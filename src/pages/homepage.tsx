@@ -1,26 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import HomeHeader from '../components/header';
-import { GlobalTabs , Footer, LoadLogo} from '../components/common';
+import { GlobalTabs , Footer, LoadLogo, IntroText, DetailText, DescriptionText} from '../components/common';
 import Card from '@material-ui/core/Card';
 import Divider from '@material-ui/core/Divider';
-
-const IntroText = styled.h1`
-    font-family: 'Oswald';
-    font-size: 50px;
-    color: #ff4040;
-`
-
-const DetailText = styled.h2`
-    font-family: 'Oswald';
-    font-size: 30px;
-    margin: 0px;
-`
-
-const DescriptionText = styled.h3`
-    font-family: 'Oswald';
-    font-size: 24px
-`
 
 const WorkBlock = styled.div`
     justify-content: center;
@@ -75,7 +58,6 @@ export default function HomePage() {
                         <DescriptionText>Software Test Analyst</DescriptionText>                   
                     </div>
                 </Card>
-                <br/>
                 <Footer/>
             </div>
     )

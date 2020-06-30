@@ -6,6 +6,7 @@ import Box from '@material-ui/core/Box';
 import Card from '@material-ui/core/Card';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
 
 interface HeaderProps {
     PageName: string;
@@ -47,13 +48,15 @@ const TabsBar = styled(AppBar)`
 `
 
 const SocialMediaLink = styled.a`
+    display: inline-flex;
     text-decoration: none;
     padding: 1rem;
     margin: 2rem;
     color: white;
-    background-color: #4287f5;
-    border: 2px solid #4287f5;
-    border-radius: 25px;
+`
+
+const FooterStyle = styled.div`
+    background-color: #ff4040
 `
 
 const LogoDesc = styled.div`
@@ -61,10 +64,25 @@ const LogoDesc = styled.div`
     margin: 2rem;
 `
 
-const DetailText = styled.h1`
+export const IntroText = styled.h1`
+    font-family: 'Oswald';
+    font-size: 50px;
+    color: #ff4040;
+`
+
+export const DetailText = styled.h2`
     font-family: 'Oswald';
     font-size: 30px;
     margin: 0px;
+`
+
+export const DescriptionText = styled.h3`
+    font-family: 'Oswald';
+    font-size: 24px
+`
+
+export const WIPPage = styled.div`
+    height: 900px;
 `
 
 export function GlobalTabs() {   
@@ -86,16 +104,16 @@ export function GlobalTabs() {
 
 export function Footer() {
     return (
-        <Box display="inline-block">
-            <span>
+            <FooterStyle>
                 <SocialMediaLink href="https://github.com/christopherpark88">
                 <GitHubIcon/>GitHub</SocialMediaLink>
-            </span>
-            <span>
+            
                 <SocialMediaLink href="https://www.linkedin.com/in/christopher-park-1160b0164/">
                 <LinkedInIcon/>LinkedIn</SocialMediaLink>
-            </span>
-        </Box>
+                
+                <SocialMediaLink href="mailto:cj2park@uwaterloo.ca">
+                <MailOutlineIcon/>Email</SocialMediaLink>
+            </FooterStyle>
     )
 }
 

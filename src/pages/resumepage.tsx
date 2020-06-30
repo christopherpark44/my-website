@@ -1,5 +1,5 @@
 import React from 'react';
-import { GlobalTabs , PageHeader } from '../components/common';
+import { GlobalTabs , PageHeader, Footer } from '../components/common';
 import styled from 'styled-components';
 
 const ResumeImageContainer = styled.div`
@@ -14,8 +14,9 @@ export default function ResumePage () {
             <GlobalTabs/>
             <br/>
             <ResumeImageContainer>
-                <img src={require('../resources/resume.png')} alt="Cannot Load" width="800" height="1100"/>
+                <img src={require('../resources/resume.png')} alt="Cannot Load" width="1100" height="1400"/>
             </ResumeImageContainer>
+            <Footer/>
         </div>
     )
 }
