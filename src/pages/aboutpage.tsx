@@ -1,14 +1,21 @@
 import React from 'react';
-import { GlobalTabs , PageHeader, Footer, DetailText, WIPPage } from '../components/common';
+import { GlobalTabs , Footer, HomeHead, IntroText} from '../components/common';
+import Slide from '@material-ui/core/Slide';
+import { useLocation } from 'react-router-dom';
 
 export default function AboutPage () {
+    let location = useLocation();
+
     return (
         <div>
-            <PageHeader PageName = "About"/>
-            <GlobalTabs/>
-            <WIPPage>
-                <DetailText>This website was made with React, TypeScript, MaterialUI and NodeJS. It is hosted on Github Pages</DetailText>
-            </WIPPage>
+            <GlobalTabs/>            
+                <HomeHead>
+                    <Slide direction = "right" in={location.pathname === '/about'}>
+                        <IntroText>
+                            About                  
+                        </IntroText>                        
+                    </Slide>
+                </HomeHead>
             <Footer/>
         </div>
     )

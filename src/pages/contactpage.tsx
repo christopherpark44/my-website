@@ -1,13 +1,21 @@
 import React from 'react';
-import { GlobalTabs , PageHeader, Footer, IntroText, DetailText, DescriptionText } from '../components/common';
+import { GlobalTabs ,Footer, HomeHead, IntroText} from '../components/common';
+import Slide from '@material-ui/core/Slide';
+import { useLocation } from 'react-router-dom';
 
 export default function ContactPage () {
+    let location = useLocation();
+
     return (
         <div>
-            <PageHeader PageName = "My Contacts"/>
-            <GlobalTabs/>
-            <br/>
-            <DetailText>If you have any questions or wish to contact me, feel free to send an email</DetailText>
+            <GlobalTabs/>            
+                <HomeHead>
+                    <Slide direction = "right" in={location.pathname === '/contact'}>
+                        <IntroText>
+                            Contacts                
+                        </IntroText>
+                    </Slide>
+                </HomeHead>
             <Footer/>
         </div>
     )

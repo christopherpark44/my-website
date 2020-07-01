@@ -1,6 +1,8 @@
 import React from 'react';
-import { GlobalTabs , PageHeader, Footer } from '../components/common';
+import { GlobalTabs , Footer, HomeHead, IntroText } from '../components/common';
 import styled from 'styled-components';
+import Slide from '@material-ui/core/Slide';
+import { useLocation } from 'react-router-dom';
 
 const ResumeImageContainer = styled.div`
     && {
@@ -8,10 +10,18 @@ const ResumeImageContainer = styled.div`
 `
 
 export default function ResumePage () {
+    let location = useLocation();
+
     return (
         <div>
-            <PageHeader PageName = "My Resume"/>
             <GlobalTabs/>
+            <HomeHead>
+                <Slide direction = "right" in={location.pathname === '/resume'}>
+                    <IntroText>
+                        Resume                    
+                    </IntroText>
+                </Slide>
+            </HomeHead>
             <br/>
             <ResumeImageContainer>
                 <img src={require('../resources/resume.png')} alt="Cannot Load" width="1100" height="1400"/>
