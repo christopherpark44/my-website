@@ -1,31 +1,35 @@
 import React from 'react';
-import { GlobalTabs , Footer, HomeHead, IntroText } from '../components/common';
+import { GlobalTabs , Footer, HomeHead, IntroText, DetailText} from '../components/common';
 import styled from 'styled-components';
 import Slide from '@material-ui/core/Slide';
-import { useLocation } from 'react-router-dom';
+import ResumePDF from '../resources/resume2020.pdf';
 
 const ResumeImageContainer = styled.div`
     && {
         margin: 20px;
 `
 
-export default function ResumePage () {
-    let location = useLocation();
+const LinkToPDF = styled.a`
+    color: inherit
+`
 
+export default function ResumePage () {
     return (
         <div>
             <GlobalTabs/>
             <HomeHead>
-                <Slide direction = "right" in={location.pathname === '/resume'}>
-                    <IntroText>
-                        Resume                    
-                    </IntroText>
+                <Slide direction = "right" in={true}>
+                    <div>
+                        <IntroText>
+                            Resume                    
+                        </IntroText>  
+                        <DetailText>
+                            <LinkToPDF href = {ResumePDF} target = "_blank">Check out my resume here!</LinkToPDF>
+                        </DetailText>                     
+                    </div>
                 </Slide>
             </HomeHead>
             <br/>
-            <ResumeImageContainer>
-                <img src={require('../resources/resume.png')} alt="Cannot Load" width="1100" height="1400"/>
-            </ResumeImageContainer>
             <Footer/>
         </div>
     )

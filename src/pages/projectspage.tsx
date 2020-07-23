@@ -1,21 +1,22 @@
 import React from 'react';
-import { GlobalTabs ,Footer, HomeHead, IntroText} from '../components/common';
+import { GlobalTabs ,Footer, HomeHead, IntroText, DetailText} from '../components/common';
 import Slide from '@material-ui/core/Slide';
-import { useLocation } from 'react-router-dom';
 
 export default function ProjectPage() {
-    let location = useLocation();
     
     return (
             <div>
                 <GlobalTabs/>            
-                    <HomeHead>
-                        <Slide direction = "right" in={location.pathname === '/projects'}> 
+                <HomeHead>
+                    <Slide direction = "right" in={true}> 
+                        <div>
                             <IntroText>
                                 Projects                 
-                            </IntroText>
-                        </Slide>
-                    </HomeHead>
+                            </IntroText>  
+                            <DetailText>Page is WIP. Check my Github instead!</DetailText>                              
+                        </div>
+                    </Slide>
+                </HomeHead>
                 <Footer/>
             </div>             
     )

@@ -16,11 +16,15 @@ interface LoadLogoProps {
     LogoName: string
 }
 
+export const PageBackground = styled.div`
+    background-color: white;
+`
+
 export const HomeHead = styled.div`
     && {
         color: white;
-        background-color: #ff4040;
-        padding: 10rem;
+        background-color: #121f29;
+        padding: 20vh 1rem 70vh 1rem
     }
 ` 
 
@@ -33,7 +37,7 @@ const PagesLink = styled(Link)`
     font-size: 22px;
     text-decoration: none;
     color: white;
-    padding: 1rem;
+    padding: 0 1rem 0 1rem;
     border-radius: 15px;
     &:hover {
         background-color: #d13232
@@ -43,7 +47,7 @@ const PagesLink = styled(Link)`
 const TabsBar = styled(AppBar)`
     padding: 1rem;
     && {
-        background-color: #ff4040;
+        background-color: #121f29;
     }
 `
 
@@ -56,85 +60,74 @@ const SocialMediaLink = styled.a`
 `
 
 const FooterStyle = styled.div`
-    background-color: #ff4040
+    background-color: #121f29;
 `
 
-const LogoDesc = styled.div`
+const LogoBlock = styled.div`
+    justify-content: center;
     display: inline-flex;
-    margin: 2rem;
 `
 
 export const IntroText = styled.h1`
-    font-family: 'Oswald';
-    font-size: 50px;
+    font-family: 'Rubik';
+    font-size: 60px;
 `
 
 export const DetailText = styled.h2`
-    font-family: 'Oswald';
+    font-family: 'Roboto Condensed';
     font-size: 30px;
-    margin: 0px;
+    font-weight: 100;
+    margin: 0;
 `
 
 export const DescriptionText = styled.h3`
-    font-family: 'Oswald';
-    font-size: 24px
+    font-family: 'Roboto Condensed';
+    font-size: 30px;
+    margin: 2%
 `
 
 export const WIPPage = styled.div`
     height: 900px;
 `
 
-export function GlobalTabs() {   
+export const GlobalTabs = () => {   
     return (
         <TabsBar position = "static">
             <nav>
                 <Box display="flex" flexDirection="row" justifyContent="space-between" alignItems="center">
                     <DetailText> {`< Christopher Park />`} </DetailText>
                     <div>
-                        <PagesLink to = "/"> Home </PagesLink>
-                        <PagesLink to = "/projects"> Projects </PagesLink>
-                        <PagesLink to = "/resume"> Resume </PagesLink>
-                        <PagesLink to = "/contact"> Contact </PagesLink>
-                        <PagesLink to = "/about"> About </PagesLink>
-                        <PagesLink to = "/other"> Other </PagesLink>                          
+                        <PagesLink to = "/">Home</PagesLink>
+                        <PagesLink to = "/projects">Projects</PagesLink>
+                        <PagesLink to = "/resume">Resume</PagesLink>
+                        <PagesLink to = "/contact">Contact</PagesLink>
+                        <PagesLink to = "/about">About</PagesLink>
+                        <PagesLink to = "/other">Other</PagesLink>                          
                     </div>
-
                 </Box> 
             </nav>
         </TabsBar>
     )
 }
 
-export function Footer() {
+export const Footer = () => {
     return (
             <FooterStyle>
                 <SocialMediaLink href="https://github.com/christopherpark88">
                 <GitHubIcon/>GitHub</SocialMediaLink>
-            
                 <SocialMediaLink href="https://www.linkedin.com/in/christopher-park-1160b0164/">
                 <LinkedInIcon/>LinkedIn</SocialMediaLink>
-                
                 <SocialMediaLink href="mailto:cj2park@uwaterloo.ca">
                 <MailOutlineIcon/>Email</SocialMediaLink>
             </FooterStyle>
     )
 }
 
-export function PageBanner ({ PageName } : HeaderProps) {
+export const LoadLogo = ({ LogoName } : LoadLogoProps) => {
     return (
-        <HomeHead>
-            <NameHead>
-               {PageName}
-            </NameHead>
-         </HomeHead>
-    )
-}
-
-export function LoadLogo({ LogoName } : LoadLogoProps) {
-    return (
-        <LogoDesc>
+        <LogoBlock>
             <img src={require(`../resources/${LogoName}Logo.png`)} alt="Cannot Load" width="50" height="50"/>
-            <DetailText>{LogoName}</DetailText>
-        </LogoDesc>
+            <DescriptionText>{LogoName}</DescriptionText>
+        </LogoBlock>
     )
 }
