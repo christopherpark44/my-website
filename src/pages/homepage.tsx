@@ -1,86 +1,95 @@
 import React from 'react';
 import styled from 'styled-components';
-import {PageBackground, GlobalTabs, HomeHead, Footer, LoadLogo, IntroText, DetailText, DescriptionText} from '../components/common';
+import { GlobalTabs, HomeHead, Footer, LoadLogo, IntroText, DetailText, DescriptionText     } from '../components/common';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Paper from '@material-ui/core/Paper';
-import ArrowDropDownCircleOutlinedIcon from '@material-ui/icons/ArrowDropDownCircleOutlined';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import Typist from 'react-typist';
+import { HeartBeat } from 'react-awesome-reveal';
 
 const WorkBlock = styled.div`
     justify-content: center;
     margin: 2rem
 `
 
-const ScrollViewDownIcon = styled(ArrowDropDownCircleOutlinedIcon)`
+const ScrollViewDownIcon = styled(ArrowDownwardIcon)`
     && {
-        font-size: 4rem;
-        padding: 2rem;   
-        color: #d13232     
+        font-size: 3rem; 
+        color: #d13232;
+    }
+    &:hover {
+        transition: transform 0.3s;
+        transform: scale(1.3);
     }
 `
 
 const InformationBlock = styled(Paper)`
-    display: inline-flex;
-    width: 95vw;
+    display: inline-grid;
+    width: 85vw;
     margin: 3rem 0 3rem 0;
-    padding: 2rem 1rem 2rem 1rem;
+    padding: 2rem 1rem;
     && {
         border-radius: 40px
     }
 `
 
 const BlockDescription = styled.span`
-    padding: 3rem;
-    width: 60%;
-    text-align: start;
-    color: #375770
+    color: #375770;
+    margin: 2rem 0
 `
 
 const BlockContent = styled.span`
     padding: 1rem;
-    width: 40%;
-    display: grid;
+    display: inline;
     align-content: space-evenly
 `
 
-const ScrollElement = () => {
-    const element = document.getElementById("DevSkillsElement")
-    element?.scrollIntoView({behavior: 'smooth'});
+const ScrollToButton = styled(Button)`
+    border-radius: 100px; 
+`
+const ScrollToSkills = () => {
+    const element = document.getElementById('DevSkillsElement')
+    element?.scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+
+const ScrollToTop = () => {
+    const element = document.getElementById('GlobalTabs')
+    element?.scrollIntoView({behavior: 'smooth', block: 'start'})
 }
 
 export default function HomePage() {
     return (
-            <PageBackground>
+            <div>
                 <GlobalTabs/>
                 <HomeHead>
                     <div>
-                        <Typist cursor={{show: false}} avgTypingDelay={20}>
-                            <IntroText>
-                                Hi, my name is Christopher. 
-                            </IntroText>  
-                            <DetailText>
-                                I'm a 2nd year University of Waterloo Mathematics Program Student and Software Developer
-                            </DetailText>                                                               
-                        </Typist>
+                        <IntroText>
+                            Hi, my name is Christopher
+                        </IntroText>  
+                        <DetailText>
+                            I'm a University of Waterloo Mathematics Student and Software Developer
+                        </DetailText>                                                            
                     </div>
-                    <Button onClick={ScrollElement}>
-                        <ScrollViewDownIcon/>                          
-                    </Button> 
+                    <HeartBeat duration={1000} triggerOnce style={{ paddingTop: '5vh'}}>
+                        <ScrollToButton onClick={ScrollToSkills}>
+                            <ScrollViewDownIcon/>                          
+                        </ScrollToButton>                         
+                    </HeartBeat>
                 </HomeHead>
                 <InformationBlock elevation={20} id="DevSkillsElement">
                     <BlockDescription>
                         <img src={require(`../resources/DeveloperIcon.png`)} alt="Cannot Load" width="100" height="100"/>
                         <IntroText>Software Development Skills</IntroText>
-                        <DetailText>Development Languages, Frameworks, Libraries, Runtimes, etc.</DetailText>                        
+                        <DetailText>Languages, Frameworks, Libraries, etc.</DetailText>    
                     </BlockDescription>
-                    <BlockContent>
-                        <LoadLogo LogoName="TypeScript"/>
-                        <LoadLogo LogoName="JavaScript"/>
-                        <LoadLogo LogoName="ReactJS"/>
-                        <LoadLogo LogoName="NodeJS"/>
-                        <LoadLogo LogoName="Python"/>                            
-                        <LoadLogo LogoName="Java"/>                         
+                    <BlockContent>   
+                        <LoadLogo LogoName="Python"/>               
+                        <LoadLogo LogoName="TypeScript"/>                                                          
+                        <LoadLogo LogoName="JavaScript"/>                                                         
+                        <LoadLogo LogoName="ReactJS"/>                                                 
+                        <LoadLogo LogoName="NodeJS"/>                         
+                        <LoadLogo LogoName="Java"/>                                     
                     </BlockContent>                    
                 </InformationBlock>
                 <InformationBlock elevation={20}>
@@ -90,11 +99,25 @@ export default function HomePage() {
                         <DetailText>Software QA Frameworks, Libraries, Tools, etc.</DetailText>                  
                     </BlockDescription>
                     <BlockContent>
-                        <LoadLogo LogoName="CucumberJS"/>
+                        <LoadLogo LogoName="CucumberJS"/>   
+                        <LoadLogo LogoName="Mocha"/>                                                      
                         <LoadLogo LogoName="WebdriverIO"/>   
-                        <LoadLogo LogoName="Mocha"/>                        
                         <LoadLogo LogoName="Chai"/>                         
                         <LoadLogo LogoName="Jest"/>                          
+                    </BlockContent>
+                </InformationBlock>
+                <InformationBlock elevation={20}>
+                    <BlockDescription>
+                        <img src={require(`../resources/QualityAssuranceIcon.png`)} alt="Cannot Load" width="100" height="100"/>
+                        <IntroText>Database Tools</IntroText>      
+                        <DetailText>Databases, Libraries, Data Languages, ORMs, GUIs</DetailText>                  
+                    </BlockDescription>
+                    <BlockContent>
+                        <LoadLogo LogoName="PostgreSQL"/>   
+                        <LoadLogo LogoName="GraphQL"/>                                                      
+                        <LoadLogo LogoName="ApolloClient"/>   
+                        <LoadLogo LogoName="TypeORM"/>                         
+                        <LoadLogo LogoName="PSequel"/>                          
                     </BlockContent>
                 </InformationBlock>
                 <div>
@@ -109,10 +132,15 @@ export default function HomePage() {
                         <img src={require(`../resources/CIBCLogo.png`)} alt="Cannot Load" width="50" height="50"/>
                         <DetailText>Canadian Imperial Bank of Commerce</DetailText>
                     </WorkBlock>     
-                    <DescriptionText>Software Test Analyst</DescriptionText>                   
+                    <DescriptionText>Software Test Analyst</DescriptionText>   
+                    <HeartBeat duration={1000} triggerOnce style={{ transform: 'rotate(180deg)', padding: '2rem'}}>
+                        <ScrollToButton onClick={ScrollToTop}>
+                            <ScrollViewDownIcon/>                          
+                        </ScrollToButton>                          
+                    </HeartBeat> 
                 </div>                            
                 <Footer/>
-            </PageBackground>
+           </div>
     )
 }
 
